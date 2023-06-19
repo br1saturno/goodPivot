@@ -1,0 +1,249 @@
+body {
+  background-color: #FCF8F4 !important;
+  font-family: 'Noto Serif', serif;
+  height: 100%;
+  margin: 0;
+}
+
+#chatCol {
+  visibility: visible;
+  overflow-y: scroll;
+  align-items: center;
+  height: 70vh;
+}
+
+#logo {
+  margin-top: 20vh;
+}
+
+#inside-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.chat span {
+  color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chat {
+  color: black;
+  font-size: 1rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.chat span {
+  color: black;
+}
+
+.chat a {
+  color: #7E6EAE;
+}
+
+.intro-chat {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.user-input {
+  border: 1px solid #E5E4E2;
+  border-radius: 10px;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 5em;
+  font-family: 'Noto Serif', serif;
+}
+
+.form-input {
+  border: 1px solid #E5E4E2;
+  border-radius: 10px;
+  outline: none;
+  background: transparent !important;
+  width: 100%;
+  font-family: 'Noto Serif', serif;
+}
+
+.user-message {
+  color: #7E7E7E;
+}
+
+.response {
+  white-space: pre-wrap;
+}
+
+.empty {
+  height: 100px;
+}
+
+#pivot-image {
+  height: 300px;
+
+}
+
+.image-text-container {
+  overflow: auto;
+}
+
+.new-image {
+  width: 300px;
+  height: auto;
+}
+
+.figure {
+  float: right;
+}
+
+.figure-caption {
+  text-align: center;
+}
+
+.image-md {
+  height: 5rem;
+}
+
+.sections-text {
+  color: black;
+  font-size: 0.825rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.footer {
+  color: #7E6EAE;
+  font-size: 0.725rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.carousel-control-next-icon {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.carousel-control-next {
+    right: -35px !important;
+}
+
+.carousel-control-prev-icon {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.carousel-control-prev {
+    left: -35px !important;
+}
+
+/* About us texts */
+
+.timeline.timeline-one .timeline-item:nth-child(2n+1) {
+    margin-left: 0;
+    padding-right: 1.5rem;
+    padding-left: 0;
+    text-align: right;
+}
+
+.timeline.timeline-one .timeline-item {
+    position: relative;
+    width: 50%;
+    margin-left: 50%;
+    padding-bottom: 0rem;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.icon-purple {
+    color: #6f42c1 !important;
+}
+
+.icon-teal {
+    color: #20c997 !important;
+}
+
+.icon-green {
+    color: #198754 !important;
+}
+
+.icon-blue {
+    color: #0d6efd !important;
+}
+
+/* About us circle */
+
+.timeline.timeline-one.dark .timeline-item:before {
+    border: 0.0625rem solid #9CA3AF;
+}
+
+.timeline.timeline-one .timeline-item:nth-child(2n+1):before {
+    margin-right: -0.5rem;
+}
+
+.timeline.timeline-one .timeline-item:nth-child(2n+1):before, .timeline.timeline-one .timeline-item:nth-child(2n+1):after {
+    right: 0;
+    left: auto;
+}
+
+.timeline.timeline-one .timeline-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 0.425rem;
+    margin-left: -0.5rem;
+    border: 0.0625rem solid #E5E7EB;
+    border-radius: 50%;
+}
+
+/* About us vertical line */
+
+.timeline.timeline-one.dark .timeline-item:after {
+    background-color: #9CA3AF;
+}
+
+.timeline.timeline-one .timeline-item:nth-child(2n+1):after {
+    margin-right: -0.0625rem;
+}
+
+.timeline.timeline-one .timeline-item:nth-child(2n+1):after {
+    right: 0;
+    left: auto;
+}
+
+.timeline.timeline-one .timeline-item:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -0.1875rem;
+    width: 0.0625rem;
+    margin-top: 1.875rem;
+    margin-left: -0.0625rem;
+    background-color: #E5E7EB;
+}
+
+.timeline.timeline-one .timeline-item img {
+    margin-bottom: 1.25rem;
+}
+
+
+.animation-container {
+  position: fixed;
+  top: 60%;
+  transform: translateY(-60%);
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.square {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s;
+}

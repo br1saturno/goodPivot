@@ -1,0 +1,687 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block nav_style %} {% endblock nav_style %}
+
+{% block content %}
+<div class="row intro-chat px-4" id="mainContainer">
+    <div class="col-0 col-md-3"></div>
+    <div class="col-12 col-md-6" id="whole-chat">
+        <div id="logo" class="mb-5" style="display: none;"><img src="/assets/img/logo.png"></div>
+        <div id="chatCol" class="px-2">
+        <div id="empty1" class="empty" style="display: none;"></div>
+        <div id="intro" class="chat mb-3" data-bs-next="textElement" data-bs-content="intro">
+            <img src="/assets/img/underscore.gif">
+        </div>
+        <div id="greeting" class="chat mb-3" data-bs-next="outputText" data-bs-content="greeting" style="display: none;">
+            <img src="/assets/img/underscore.gif">
+        </div>
+        <div id="summary-text" class="chat text-start mb-3" data-bs-next="nextText" data-bs-content="summary" style="display: none;">
+            <img src="/assets/img/underscore.gif">
+        </div>
+        <div id="next-text" class="chat text-start mb-3 fw-bolder" data-bs-next="chatDiv" data-bs-content="next" style="display: none;">
+            <img src="/assets/img/underscore.gif">
+        </div>
+        <div id="chatHistory" class="chat"></div>
+        <div id="cursorGif" class="chat text-start mb-3" style="display: none;">
+            <img src="/assets/img/underscore.gif">
+        </div>
+        <div id="chatDiv" style="display: none;" data-bs-next="None">
+        <textarea id="message" name="message" class="mt-2 user-input p-2"></textarea>
+        </div>
+        <div id="sectionsIntro" class="chat mt-3 mb-3" style="display: none;" data-bs-next="sectionsDiv" data-bs-content="sectionsIntro"></div>
+        <div id="sections" class="chat mt-3 mb-3" style="display: none;" data-bs-content="None">
+            <a href="#site-ends" id="servicesLink" class="sections-link" data-bs-section="#servicesContent" data-bs-text="Ok, here you go:">Our services</a> ・
+            <a href="#site-ends" class="sections-link" data-bs-section="#aboutContent" data-bs-text="A bit about us:">About us</a> ・
+            <a href="#site-ends" class="sections-link" data-bs-section="#contactContent" data-bs-text="Let us know what you need:">Contact us</a>
+        </div>
+
+        <div id="sectionsTitle" class="chat mb-3" style="display: none;" data-bs-content="titleText" data-bs-next="sectionsTitle2"></div>
+<!-- Services Section -->
+     <section class="section section-md pt-0 sections-text" id="servicesContent" style="display: none;" data-bs-show="#servicesContent">
+        <div class="container">
+            <div class="col-12 col-lg-12">
+                <div id="servicesCarousel" class="carousel carousel-dark slide" data-bs-interval="false">
+                <div class="carousel-inner p-4">
+                <div class="carousel-item active">
+                <div class="row justify-content-center mt-n7 z-2">
+                    <div class="col-12 col-md-6">
+                        <div class="row px-1">
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300">
+                                <div class="card-body p-4 pt-4">
+                                    <h2 class="h5 mb-2 fw-bold">AI Consulting</h2>
+                                    <p>We provide expert advice and guidance to our clients on leveraging AI technologies,
+                                        identifying business use cases, and developing an AI strategy tailored to their specific needs.</p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                            <!-- Icon Boxes -->
+                            <div class="card  border-gray-300 mt-2">
+                                <div class="card-body p-4 pt-4">
+<!--                                    <img src="https://appsrv1-147a1.kxcdn.com/pixel-pro-v540/img/pages/technologies.svg" alt="Responsive illustration" class="image-md mb-4">-->
+                                    <h2 class="h5 mb-2 fw-bold">Custom AI Development</h2>
+                                    <p>We design and develop custom AI models, algorithms, and solutions to address specific business
+                                    challenges or improve processes, leveraging machine learning, natural language processing,
+                                    computer vision, or other AI techniques.</p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row mt-3 mt-lg-0 px-1">
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300">
+                                <div class="card-body p-4 pt-4">
+<!--                                    <img src="https://appsrv1-147a1.kxcdn.com/pixel-pro-v540/img/pages/code.svg" alt="Code illustration" class="image-md mb-4">-->
+                                    <h2 class="h5 mb-2 fw-bold">Data Analytics and Insights</h2>
+                                    <p>We offer data analysis services to help clients extract valuable insights from their data,
+                                    using AI and machine learning algorithms to uncover patterns, trends, and correlations
+                                    that can drive informed decision-making.
+                                    </p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300 mt-2">
+                                <div class="card-body p-4 pt-4">
+<!--                                    <img src="https://appsrv1-147a1.kxcdn.com/pixel-pro-v540/img/pages/support.svg" alt="Support illustration" class="image-md mb-4">-->
+                                    <h2 class="h5 mb-2 fw-bold">Intelligent Automation</h2>
+                                    <p>We help our clients automate repetitive tasks and streamline workflows using AI-powered automation
+                                    tools, such as robotic process automation (RPA) or cognitive automation, to increase efficiency
+                                    and reduce costs.</p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="row justify-content-center mt-n7 z-2">
+                    <div class="col-12 col-md-6">
+                        <div class="row px-1">
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300">
+                                <div class="card-body p-4 pt-4">
+                                    <h2 class="h5 mb-2 fw-bold">Natural Language Processing (NLP) Solutions</h2>
+                                    <p>Develop NLP-based applications that enable clients to analyze and understand
+                                        text data, automate text-based processes, build chatbots or virtual assistants,
+                                        or improve customer sentiment analysis.</p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300 mt-2">
+                                <div class="card-body p-4 pt-4">
+                                    <h2 class="h5 mb-2 fw-bold">Computer Vision Solutions</h2>
+                                    <p>Build computer vision systems for clients to extract information from images
+                                        or videos, enabling tasks such as object recognition, image classification,
+                                        anomaly detection, or facial recognition.</p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row mt-3 mt-lg-0 px-1">
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300">
+                                <div class="card-body p-4 pt-4">
+                                    <h2 class="h5 mb-2 fw-bold">AI Integration Services</h2>
+                                    <p>Assist clients in integrating AI technologies into their existing systems,
+                                        whether it's integrating AI models into their software applications or
+                                        connecting AI platforms with other data sources and APIs.
+                                    </p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                            <!-- Icon Boxes -->
+                            <div class="card border-gray-300 mt-2">
+                                <div class="card-body p-4 pt-4">
+<!--                                    <img src="https://appsrv1-147a1.kxcdn.com/pixel-pro-v540/img/pages/support.svg" alt="Support illustration" class="image-md mb-4">-->
+                                    <h2 class="h5 mb-2 fw-bold">AI Support and Maintenance</h2>
+                                    <p>Provide ongoing support, monitoring, and maintenance services to ensure the
+                                        optimal performance and reliability of deployed AI solutions, including model
+                                        retraining, bug fixing, and system upgrades.</p>
+<!--                                    <a href="#" class="btn btn-sm btn-primary">Learn more</a>-->
+                                </div>
+                            </div>
+                            <!-- End of Icon Boxes -->
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+    <!-- About Us Section -->
+    <section class="section section-lg bg-gray-200 sections-text" id="aboutContent" style="display: none;" data-bs-show="#aboutContent">
+        <div class="container">
+<!--            <div class="row text-center">-->
+<!--                <div class="col">-->
+<!--                    <h2 class="h1 fw-light"><span class="fw-bold">Our</span> history</h2>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="row justify-content-center mt-6">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="timeline timeline-one dark px-3 px-sm-0">
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-2">Our Approach <i class="fa-solid fa-puzzle-piece icon-purple"></i></h3>
+                                <p>Successful AI integration requires a personalized, collaborative approach. We immerse ourselves in our clients' world, understanding their goals, processes, and challenges. Through close partnership, we co-create tailored AI strategies. Our approach values open communication, transparency, and exceptional outcomes. By combining technical expertise with clients' domain knowledge, our AI systems seamlessly integrate, add value, and enable data-driven decision-making.</p>
+                            </div>
+                            <!-- Timeline Item 2 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-2">Our Team <i class="fa-solid fa-people-group icon-blue"></i></h3>
+                                <p>Our exceptional team of AI experts, data scientists, engineers, and consultants drives our success. With diverse backgrounds and deep AI knowledge, they tackle complex challenges and deliver outstanding results. We stay at the forefront of AI advancements, constantly learning and evolving. Through collaboration and excellence, we push AI integration boundaries, delivering transformative outcomes for clients.
+                                </p>
+                            </div>
+                            <!-- Timeline Item 3 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-2">Ethical AI <i class="fa-solid fa-shield-heart icon-green"></i></h3>
+                                <p>We uphold ethical AI standards, prioritizing responsible data usage and societal impact. We safeguard personal information, ensure compliance, and promote transparency. Addressing biases, we monitor and refine AI systems for fairness. Our commitment fosters innovation, trust, and positive societal impact for clients embracing AI technologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us Section -->
+    <!-- Contact Us Section -->
+    <section class="section section-lg sections-text mb-3" id="contactContent" style="display: none;" data-bs-show="#contactContent">
+        <div class="container">
+            <form class="">
+              <div class="">
+              <div class="mb-3">
+                <label for="name" class="form-label">Your name</label>
+                <input type="text" class="form-control form-input" id="name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control form-input" id="email" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              </div>
+              <div class="mb-3">
+              <label for="userMessage" class="form-label">Your message</label>
+              <textarea id="userMessage" name="user-message" class="mt-2 user-input p-2 mb-1"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- End Contact Us Section -->
+    <div id="sectionsTitle2" class="chat mt-4 mb-3" style="display: none;" data-bs-content="titleText2" data-bs-next="sectionsDiv2"></div>
+    <div id="sections2" class="chat mt-3 mb-3" style="display: none;" data-bs-content="None">
+        <a href="#site-ends" id="servicesLink2" class="sections-link" data-bs-section="#servicesContent">Our services</a> ・
+        <a href="#site-ends" class="sections-link" data-bs-section="#aboutContent">About us</a> ・
+        <a href="#site-ends" class="sections-link" data-bs-section="#contactContent">Contact us</a>
+    </div>
+    <div id="inside-footer"></div>
+<!--        <div class="accordion accordion-flush chat" id="servicesAccordion" style="display: none;">-->
+<!--            <div class="accordion-item">-->
+<!--                <h2 class="accordion-header" id="headingOne">-->
+<!--                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">-->
+<!--                        AI Consulting-->
+<!--                    </button>-->
+<!--                </h2>-->
+<!--                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"-->
+<!--                     data-bs-parent="#servicesAccordion">-->
+<!--                    <div class="accordion-body">-->
+<!--                        We provide expert advice and guidance to our clients on leveraging AI technologies,-->
+<!--                        identifying business use cases, and developing an AI strategy tailored to their specific needs.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="accordion-item">-->
+<!--                <h2 class="accordion-header" id="headingTwo">-->
+<!--                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                        Custom AI Development-->
+<!--                    </button>-->
+<!--                </h2>-->
+<!--                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"-->
+<!--                     data-bs-parent="#servicesAccordion">-->
+<!--                    <div class="accordion-body">-->
+<!--                        We design and develop custom AI models, algorithms, and solutions to address specific business-->
+<!--                        challenges or improve processes, leveraging machine learning, natural language processing,-->
+<!--                        computer vision, or other AI techniques.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="accordion-item">-->
+<!--                <h2 class="accordion-header" id="headingThree">-->
+<!--                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                        Data Analytics and Insights-->
+<!--                    </button>-->
+<!--                </h2>-->
+<!--                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"-->
+<!--                     data-bs-parent="#servicesAccordion">-->
+<!--                    <div class="accordion-body">-->
+<!--                        We offer data analysis services to help clients extract valuable insights from their data,-->
+<!--                        using AI and machine learning algorithms to uncover patterns, trends, and correlations-->
+<!--                        that can drive informed decision-making.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="accordion-item">-->
+<!--                <h2 class="accordion-header" id="headingFour">-->
+<!--                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"-->
+<!--                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+<!--                        Intelligent Automation-->
+<!--                    </button>-->
+<!--                </h2>-->
+<!--                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"-->
+<!--                     data-bs-parent="#servicesAccordion">-->
+<!--                    <div class="accordion-body">-->
+<!--                        We help our clients automate repetitive tasks and streamline workflows using AI-powered automation-->
+<!--                        tools, such as robotic process automation (RPA) or cognitive automation, to increase efficiency-->
+<!--                        and reduce costs.-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div id="empty3" class="empty" style="display: none;"></div>
+        <div id="site-ends" class="mb-4"></div>
+        </div>
+        <div class="footer text-center mt-3">GoodPivot © 2023</div>
+    </div>
+    <div class="col-0 col-md-3"></div>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<!-- Website intro -->
+<script>
+
+const textElement = document.querySelector("#greeting");
+const introElement = document.querySelector("#intro");
+const outputText = document.querySelector("#summary-text");
+const nextText = document.querySelector("#next-text");
+const wholeChat = document.querySelector("#whole-chat");
+const intro = 'Hey there, we are GoodPivot. We help you integrate AI into your business.';
+let summary = "";
+let aiResponse = "";
+const greeting = "Hope you're having a great day!";
+const next = 'For a personalized experience, mind if I get your name and the industry your company is in?';
+const chatDiv = document.getElementById("chatDiv"); // Text area inside a div
+const userInputTextArea = document.getElementById("message"); // Text area where the user writes their prompt
+const chatHistory = document.getElementById("chatHistory"); // Container for chat history
+const chatResponse = document.createElement("div");
+chatResponse.classList.add("response");
+chatResponse.classList.add("mb-3");
+chatResponse.setAttribute('data-bs-content', 'aiResponse');
+chatResponse.setAttribute('data-bs-next', 'sectionsIntroDiv');
+chatResponse.id = "aiResponse";
+const imageContainer = document.createElement("div");
+// const animation = document.createElement('div');
+imageContainer.classList.add("image-text-container");
+const sectionsDiv = document.querySelector("#sections");
+const sectionsIntroDiv = document.querySelector("#sectionsIntro");
+const sectionsIntro = 'Learn more about GoodPivot:';
+const sectionsTitle = document.querySelector('#sectionsTitle');
+const titleText2 = "Keep exploring GoodPivot:";
+const None = "None";
+let titleText = "";
+const sectionsTitle2 = document.querySelector('#sectionsTitle2');
+const sectionsDiv2 = document.querySelector("#sections2");
+let index = 0;
+let divCounter = 0;
+let typingFinished = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+
+// Function to scroll the inside footer into view
+function scrollBottomDivIntoView() {
+  var container = document.getElementById("chatCol");
+  var bottomDiv = document.getElementById("inside-footer");
+  container.scrollTo({ top: bottomDiv.offsetTop, behavior: 'smooth' });
+}
+
+// Fades in text
+function fadeLettersIn(textDivId) {
+  if (textDivId.getAttribute('data-bs-next') != 'None') {
+      if (textDivId.getAttribute('data-bs-content') != 'None') {
+        var text = eval(textDivId.getAttribute('data-bs-content'));
+      } else {
+      scrollBottomDivIntoView();
+      return;
+      }
+      var nextDiv = eval(textDivId.getAttribute('data-bs-next'));
+      var letters = text.split("");
+      var randomizedText = "";
+      for (var i = 0; i < letters.length; i++) {
+        randomizedText += "<span>" + letters[i] + "</span>";
+      }
+      textDivId.innerHTML = randomizedText;
+
+      var spanElements = textDivId.getElementsByTagName("span");
+      var counter = 0;
+
+      var interval = setInterval(function () {
+        spanElements[counter].style.opacity = 1;
+        counter++;
+
+        if (counter === spanElements.length) {
+          scrollBottomDivIntoView();
+          clearInterval(interval);
+          if (nextDiv) {
+            nextDiv.style.display = 'block';
+            fadeLettersIn(nextDiv);
+          }
+        }
+      }, 10); // Adjust the interval (in milliseconds) for the desired fading effect
+      } else {
+         if (chatDiv.style.display == 'block') {
+              userInputTextArea.focus();
+            }
+  }
+}
+
+
+// Generates the summary
+async function generateSummary() {
+  const url = '/home-text';
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+
+  const decoder = new TextDecoder();
+  const reader = response.body.getReader();
+  let chunks = "";
+
+  const readChunk = async () => {
+    while (true) {
+      const { done, value } = await reader.read();
+
+      if (done) {
+        summary = chunks;
+        fadeLettersIn(introElement);
+        break;
+      }
+
+      chunks += decoder.decode(value);
+      outputText.innerHTML = ""; // Clear the output text before typing the new chunk
+
+    }
+  };
+
+  readChunk();
+}
+
+generateSummary();
+
+// Function to display user input
+function displayUserInput(input) {
+  const userMessage = document.createElement("div");
+  userMessage.textContent = input;
+  userMessage.classList.add("user-message");
+  userMessage.classList.add("mb-3");
+  chatHistory.appendChild(userMessage);
+  cursorGif.style.display = "block";
+  chatDiv.style.display = "none";
+  userInputTextArea.disabled = true;
+}
+
+// Function to display chat response
+function displayChatResponse() {
+  cursorGif.style.display = "none";
+  chatHistory.appendChild(imageContainer);
+  imageContainer.appendChild(chatResponse);
+
+  fadeLettersIn(chatResponse);
+}
+
+// Function to handle user input
+async function handleUserInput() {
+  const prompt = userInputTextArea.value;
+  userInputTextArea.value = "";
+
+  if (prompt.trim() === "") {
+    return; // Do not proceed if the input is empty or contains only whitespace
+  }
+
+  displayUserInput(prompt);
+  generateImage(prompt);
+
+  const url = "/user-input";
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ prompt }), // Pass the prompt as the request body
+  });
+
+  const decoder = new TextDecoder();
+  const reader = response.body.getReader();
+  let chunks = "";
+
+  const readChunk = async () => {
+    while (true) {
+      const { done, value } = await reader.read();
+
+      if (done) {
+        aiResponse = chunks;
+        displayChatResponse();
+        break;
+      }
+
+      chunks += decoder.decode(value);
+    }
+  };
+
+  readChunk();
+  userInputTextArea.value = ""; // Clear the input text area after sending the user input
+}
+
+// Event listener for the Enter key press in the user input text area
+userInputTextArea.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent line break on Enter key press
+    handleUserInput();
+  }
+});
+
+// Show section
+$(document).ready(function() {
+  $(".sections-link").click(function(event) {
+    event.preventDefault();
+    $('#sectionsTitle').show();
+    titleText = $(this).data('bs-text');
+    var sectionContent = $(this).data('bs-section');
+    $(sectionContent).show();
+    // Hide all section contents except the clicked one
+    $('[data-bs-show]').not(sectionContent).hide();
+
+    fadeLettersIn(sectionsTitle);
+
+
+    // Scroll down
+    $('html, #chatCol').animate({ scrollTop: '+800px' }, 'smooth');
+
+  });
+});
+
+// Generates image
+function generateImage(prompt) {
+  if (typeof prompt !== 'string' || prompt.trim() === '') {
+    console.error('Invalid prompt value');
+    return;
+  }
+
+  const figure = document.createElement("figure");
+  figure.classList.add("figure");
+  imageContainer.appendChild(figure);
+
+  const newImage = document.createElement("img");
+  newImage.classList.add("new-image");
+  newImage.classList.add("mb-2");
+  newImage.classList.add("ps-2");
+  newImage.classList.add("rounded");
+  figure.appendChild(newImage);
+
+  const figCaption = document.createElement("figcaption");
+  figCaption.classList.add("figure-caption");
+  figCaption.classList.add("ps-2");
+
+  $.ajax({
+    type: "POST",
+    url: "/industry-image",
+    contentType: "application/json",
+    data: JSON.stringify({ prompt: prompt }),
+    success: function (response) {
+      newImage.src = response;
+      figCaption.textContent = "AI generated from your answer"
+      figure.appendChild(figCaption);
+    },
+  });
+}
+});
+</script>
+<!-- End Website intro -->
+
+<!-- Type string functionality - NOT IN USE -->
+<script>
+function displayTextAsTyped(text, divId) {
+  var delay = 10; // Delay between each character being displayed
+  var index = 0;
+  var currentText = '';
+
+  function displayNextCharacter() {
+    if (index < text.length) {
+      currentText += text.charAt(index);
+      $("#" + divId).html(currentText);
+      index++;
+      setTimeout(displayNextCharacter, delay);
+    }
+  }
+
+  displayNextCharacter();
+}
+
+</script>
+
+<!-- Squares animation - NOT IN USE -->
+<script>
+function startAnimation(containerId, appendImage, topHeight) {
+  const container = document.getElementById(containerId);
+  const animation = document.createElement('div');
+  container.appendChild(animation);
+  animation.classList.add('animation-container');
+  animation.style.top = topHeight;
+
+  const numberOfSquares = 55;
+  const probabilityToShow = 0.3;
+  const delayBetweenSquares = 30;
+  const fadeInDuration = 100;
+  const stayDuration = 400;
+  const fadeOutDuration = 100;
+
+  let completedAnimations = 0;
+  let fadeOutAnimations = 0;
+
+  function handleAnimationEnd() {
+    fadeOutAnimations++;
+
+    // Check if all fade-out animations have completed
+    if (fadeOutAnimations === numberOfSquares) {
+      // Empty the container
+      animation.innerHTML = '';
+
+      // Append the image if appendImage is true
+      // if (appendImage) {
+      //  const image = document.createElement('img');
+      //  image.src = '/assets/img/underscore.gif';
+      //  animation.appendChild(image);
+      // }
+    }
+  }
+
+  function getRandomColor() {
+  const colors = [
+    'rgba(126, 110, 174, 0.3)',
+    'rgba(50, 14, 59, 0.3)',
+    'rgba(188, 237, 246, 0.3)',
+    'rgba(221, 251, 210, 0.3)',
+    'rgba(239, 98, 108, 0.3)'
+    ];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  }
+
+  for (let i = 0; i < numberOfSquares; i++) {
+    const square = document.createElement('div');
+    square.classList.add('square');
+    animation.appendChild(square);
+
+    setTimeout(() => {
+      const show = Math.random() < probabilityToShow;
+      if (show) {
+        square.style.transition = `background-color ${fadeInDuration}ms, opacity ${fadeOutDuration}ms ${stayDuration}ms`;
+        const backgroundColor = getRandomColor();
+        square.style.backgroundColor = backgroundColor;
+        console.log(square.style.top);
+        square.style.opacity = 0.3;
+
+        setTimeout(() => {
+          square.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+          square.style.opacity = 0;
+          square.addEventListener('transitionend', handleAnimationEnd);
+        }, stayDuration + fadeInDuration);
+      } else {
+        square.style.transition = `background-color ${fadeInDuration}ms`;
+        square.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        square.addEventListener('transitionend', handleAnimationEnd);
+      }
+
+      completedAnimations++;
+    }, i * delayBetweenSquares);
+  }
+}
+
+
+
+
+
+</script>
+
+
+{% endblock javascripts %}

@@ -1,0 +1,77 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block nav_style %} {% endblock nav_style %}
+
+{% block content %}
+<div id="animation-container"></div>
+
+<button onclick="startAnimation('animation-container', 'true')">Start Animation</button>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+function startAnimation(containerId, appendImage) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+
+  const numberOfSquares = 55;
+  const probabilityToShow = 0.3;
+  const delayBetweenSquares = 10;
+  const fadeInDuration = 100;
+  const stayDuration = 300;
+  const fadeOutDuration = 100;
+
+  container.classList.add('add-height');
+
+  let completedAnimations = 0;
+
+  for (let i = 0; i < numberOfSquares; i++) {
+    const square = document.createElement('div');
+    square.classList.add('square');
+    container.appendChild(square);
+
+    setTimeout(() => {
+      const show = Math.random() < probabilityToShow;
+      if (show) {
+        square.style.transition = `background-color ${fadeInDuration}ms, opacity ${fadeOutDuration}ms ${stayDuration}ms`;
+        square.style.backgroundColor = 'rgba(126, 110, 174, 0.6)';
+        square.style.opacity = 0.6;
+
+        setTimeout(() => {
+          square.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+          square.style.opacity = 0;
+        }, stayDuration + fadeInDuration);
+      } else {
+        square.style.transition = `background-color ${fadeInDuration}ms`;
+        square.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+      }
+
+      completedAnimations++;
+
+      // Check if all animations have completed and append the image
+      if (completedAnimations === numberOfSquares && appendImage) {
+        container.innerHTML = '';
+        const image = document.createElement('img');
+        image.src = '/assets/img/underscore.gif';
+        container.appendChild(image);
+      }
+    }, i * delayBetweenSquares);
+  }
+}
+
+
+
+
+
+</script>
+
+
+{% endblock javascripts %}
