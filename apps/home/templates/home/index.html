@@ -11,7 +11,7 @@
 <div class="row intro-chat px-4" id="mainContainer">
     <div class="col-0 col-md-3"></div>
     <div class="col-12 col-md-6" id="whole-chat">
-        <div id="logo" class="mb-5" style="display: none;"><img src="/assets/img/logo.png"></div>
+        <div id="logo" class="hidden mb-5"><img src="/assets/img/logo.png"></div>
         <div id="chatCol" class="px-2">
         <div id="empty1" class="empty" style="display: none;"></div>
         <div id="intro" class="chat mb-3" data-bs-next="textElement" data-bs-content="intro">
@@ -351,6 +351,7 @@ const sectionsDiv = document.querySelector("#sections");
 const sectionsIntroDiv = document.querySelector("#sectionsIntro");
 const sectionsIntro = 'Learn more about GoodPivot:';
 const sectionsTitle = document.querySelector('#sectionsTitle');
+const logo = document.querySelector("#logo");
 const titleText2 = "Keep exploring GoodPivot:";
 const None = "None";
 let titleText = "";
@@ -378,6 +379,7 @@ function fadeLettersIn(textDivId) {
       scrollBottomDivIntoView();
       return;
       }
+
       var nextDiv = eval(textDivId.getAttribute('data-bs-next'));
       var letters = text.split("");
       var randomizedText = "";
@@ -396,6 +398,9 @@ function fadeLettersIn(textDivId) {
         if (counter === spanElements.length) {
           scrollBottomDivIntoView();
           clearInterval(interval);
+          if (textDivId.id == 'sectionsIntro') {
+            fadeInElement('logo');
+          }
           if (nextDiv) {
             nextDiv.style.display = 'block';
             fadeLettersIn(nextDiv);
@@ -574,6 +579,24 @@ function generateImage(prompt) {
     },
   });
 }
+
+function fadeInElement(elementId) {
+  var div = document.getElementById(elementId);
+  console.log(div);
+  div.style.opacity = '1';
+
+  var opacity = 0;
+
+  var fadeInInterval = setInterval(function() {
+    if (opacity < 1) {
+      opacity += 0.1; // Adjust the increment to control the fading speed
+      div.style.opacity = opacity;
+    } else {
+      clearInterval(fadeInInterval);
+    }
+  }, 100); // Adjust the interval to control the fading smoothness
+}
+
 });
 </script>
 <!-- End Website intro -->

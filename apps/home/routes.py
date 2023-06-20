@@ -7,7 +7,7 @@ import random
 
 from . import home_bp
 from apps.home.util import sd_generation
-from flask import Response, render_template, jsonify, request, redirect, url_for, stream_template
+from flask import Response, render_template, jsonify, request, redirect, url_for
 
 # Emails sending imports
 import smtplib

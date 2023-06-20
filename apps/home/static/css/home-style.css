@@ -13,8 +13,13 @@ body {
 }
 
 #logo {
-  margin-top: 20vh;
+  margin-top: 5vh;
 }
+
+.hidden {
+  opacity: 0;
+}
+
 
 #inside-footer {
   position: fixed;
