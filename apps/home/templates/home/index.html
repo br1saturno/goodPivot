@@ -373,46 +373,53 @@ function scrollBottomDivIntoView() {
 // Fades in text
 function fadeLettersIn(textDivId) {
   if (textDivId.getAttribute('data-bs-next') != 'None') {
-      if (textDivId.getAttribute('data-bs-content') != 'None') {
-        var text = eval(textDivId.getAttribute('data-bs-content'));
-      } else {
+    if (textDivId.getAttribute('data-bs-content') != 'None') {
+      var text = eval(textDivId.getAttribute('data-bs-content'));
+    } else {
       scrollBottomDivIntoView();
       return;
-      }
+    }
 
-      var nextDiv = eval(textDivId.getAttribute('data-bs-next'));
-      var letters = text.split("");
-      var randomizedText = "";
-      for (var i = 0; i < letters.length; i++) {
-        randomizedText += "<span>" + letters[i] + "</span>";
-      }
-      textDivId.innerHTML = randomizedText;
+    var nextDiv = eval(textDivId.getAttribute('data-bs-next'));
+    var letters = text.split("");
+    var randomizedText = "";
+    for (var i = 0; i < letters.length; i++) {
+      randomizedText += "<span class='falling-letter'>" + letters[i] + "</span>";
+    }
+    textDivId.innerHTML = randomizedText;
 
-      var spanElements = textDivId.getElementsByTagName("span");
-      var counter = 0;
+    var spanElements = textDivId.getElementsByClassName("falling-letter");
+    var counter = 0;
 
-      var interval = setInterval(function () {
-        spanElements[counter].style.opacity = 1;
-        counter++;
+    var interval = setInterval(function () {
+      spanElements[counter].style.opacity = 1;
+      counter++;
 
-        if (counter === spanElements.length) {
-          scrollBottomDivIntoView();
-          clearInterval(interval);
-          if (textDivId.id == 'sectionsIntro') {
-            fadeInElement('logo');
-          }
-          if (nextDiv) {
-            nextDiv.style.display = 'block';
-            fadeLettersIn(nextDiv);
-          }
+      if (counter === spanElements.length) {
+        scrollBottomDivIntoView();
+        clearInterval(interval);
+        if (textDivId.id == 'sectionsIntro') {
+          fadeInElement('logo');
         }
-      }, 10); // Adjust the interval (in milliseconds) for the desired fading effect
-      } else {
-         if (chatDiv.style.display == 'block') {
-              userInputTextArea.focus();
-            }
+        if (nextDiv) {
+          nextDiv.style.display = 'block';
+          fadeLettersIn(nextDiv);
+        }
+      }
+    }, 100); // Adjust the interval (in milliseconds) for the desired fading effect
+
+    setTimeout(function () {
+      for (var i = 0; i < spanElements.length; i++) {
+        spanElements[i].classList.remove("falling-letter");
+      }
+    }, 1000); // Adjust the duration (in milliseconds) for the falling effect
+  } else {
+    if (chatDiv.style.display == 'block') {
+      userInputTextArea.focus();
+    }
   }
 }
+
 
 
 // Generates the summary
