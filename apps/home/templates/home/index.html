@@ -388,11 +388,12 @@ function fadeLettersIn(textDivId) {
     }
     textDivId.innerHTML = randomizedText;
 
-    var spanElements = textDivId.getElementsByClassName("falling-letter");
+    var spanElements = textDivId.getElementsByTagName("span");
     var counter = 0;
 
     var interval = setInterval(function () {
       spanElements[counter].style.opacity = 1;
+      spanElements[counter].classList.add('fall-animation');
       counter++;
 
       if (counter === spanElements.length) {
@@ -406,14 +407,13 @@ function fadeLettersIn(textDivId) {
           fadeLettersIn(nextDiv);
         }
       }
-    }, 100); // Adjust the interval (in milliseconds) for the desired fading effect
+    }, 10); // Adjust the interval (in milliseconds) for the desired fading effect
   } else {
     if (chatDiv.style.display == 'block') {
       userInputTextArea.focus();
     }
   }
 }
-
 
 
 
