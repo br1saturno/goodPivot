@@ -233,6 +233,26 @@ body {
 }
 
 
+.falling-letter {
+  opacity: 0;
+}
+
+.fall-animation {
+  animation-name: fall;
+  animation-duration: 1s; /* Adjust the duration for the desired falling speed */
+  animation-timing-function: ease-in-out; /* Adjust the timing function for the desired easing effect */
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px); /* Adjust the initial position of falling */
+  }
+  100% {
+    transform: translateY(0); /* Adjust the final position where the letter settles */
+  }
+}
+
+
 /* Squares animation NOT IN USE */
 .animation-container {
   position: fixed;
