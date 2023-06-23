@@ -393,7 +393,6 @@ function fadeLettersIn(textDivId) {
 
     var interval = setInterval(function () {
       spanElements[counter].style.opacity = 1;
-      spanElements[counter].classList.add('fall-animation');
       counter++;
 
       if (counter === spanElements.length) {
@@ -414,6 +413,7 @@ function fadeLettersIn(textDivId) {
     }
   }
 }
+
 
 
 
