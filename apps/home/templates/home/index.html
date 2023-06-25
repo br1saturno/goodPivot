@@ -393,7 +393,7 @@ function fadeLettersIn(textDivId) {
 
     var interval = setInterval(function () {
       spanElements[counter].classList.add("active");
-      spanElements[counter].style.top = 0;
+      spanElements[counter].style.bottom = 0;
       counter++;
 
       if (counter === spanElements.length) {
