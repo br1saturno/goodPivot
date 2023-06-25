@@ -236,7 +236,7 @@ body {
 .falling-letter {
   opacity: 0;
   position: relative;
-  top: -150px; /* Adjust the initial position of falling */
+  top: -50px !important; /* Adjust the initial position of falling */
   transition: opacity 0.5s ease-in-out, top 0.7s ease-in-out; /* Adjust the transition duration and easing */
 }
 
