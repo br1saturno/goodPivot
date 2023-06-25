@@ -389,6 +389,7 @@ function fadeLettersIn(textDivId) {
     textDivId.innerHTML = randomizedText;
 
     var spanElements = textDivId.getElementsByClassName("falling-letter");
+    console.log(spanElements);
     var counter = 0;
 
     var interval = setInterval(function () {
