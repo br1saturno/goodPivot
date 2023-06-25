@@ -394,7 +394,6 @@ function fadeLettersIn(textDivId) {
     var interval = setInterval(function () {
       console.log(spanElements[counter]);
       spanElements[counter].classList.add("active");
-      spanElements[counter].style.setProperty("top", "0px", "important");
       counter++;
 
       if (counter === spanElements.length) {
@@ -409,6 +408,9 @@ function fadeLettersIn(textDivId) {
         }
       }
     }, 10); // Adjust the interval (in milliseconds) for the desired fading effect
+
+    // Trigger reflow to force the initial state to be applied before the animation starts
+    spanElements[0].offsetHeight;
   } else {
     if (chatDiv.style.display == 'block') {
       userInputTextArea.focus();
