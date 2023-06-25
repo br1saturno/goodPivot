@@ -243,6 +243,7 @@ body {
   animation-name: fall;
   animation-duration: 0.5s; /* Adjust the duration for the desired falling speed */
   animation-timing-function: ease-in-out; /* Adjust the timing function for the desired easing effect */
+  animation-fill-mode: forwards; /* Keep the final state after animation ends */
 }
 
 @keyframes fall {
