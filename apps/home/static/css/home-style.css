@@ -237,13 +237,22 @@ body {
   opacity: 0;
   position: relative;
   top: -50px; /* Adjust the initial position of falling */
-  transition: opacity 0.5s ease-in-out, top 0.7s ease-in-out; /* Adjust the transition duration and easing */
+  animation-name: fall;
+  animation-duration: 0.5s; /* Adjust the duration for the desired falling speed */
+  animation-timing-function: ease-in-out; /* Adjust the timing function for the desired easing effect */
 }
 
-.falling-letter.active {
-  opacity: 1;
-  top: 0;
+@keyframes fall {
+  0% {
+    opacity: 0;
+    top: -50px; /* Same as the initial position */
+  }
+  100% {
+    opacity: 1;
+    top: 0; /* Same as the final position */
+  }
 }
+
 
 
 
