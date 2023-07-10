@@ -16,7 +16,8 @@ from email.mime.text import MIMEText
 openai.organization = os.getenv('OPENAI_ORG_ID')
 openai.api_key = os.getenv('OPENAI_API_KEY')
 openai.Model.list()
-chat_model = 'gpt-3.5-turbo'
+chat_model = 'gpt-4'
+# chat_model = 'gpt-3.5-turbo'
 
 
 @home_bp.route('/', methods=["GET", "POST"])

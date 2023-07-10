@@ -249,7 +249,7 @@ body {
 @keyframes fall {
   0% {
     opacity: 0;
-    top: -10px; /* Same as the initial position */
+    top: -5px; /* Same as the initial position */
   }
   100% {
     opacity: 1;
