@@ -197,8 +197,8 @@ def industry_image():
                        f"concept art"
 
         industry_image = sd_generation(image_prompt, "generated_img", 'industry', 1)
-
-        return industry_image
+        print(industry_image)
+        return industry_image[0]
 
 
 @home_bp.route('/send-email', methods=["GET", "POST"])

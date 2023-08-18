@@ -29,6 +29,7 @@ def sd_generation(prompt, folder, image_word,  samples, style=None):
     }, )
 
     data = answers.json()
+
     image_base_url = f"./apps/home/static/{folder}/"
     image_list = [ ]
     for i, image in enumerate(data[ "artifacts" ]):

@@ -330,7 +330,7 @@ const introElement = document.querySelector("#intro");
 const outputText = document.querySelector("#summary-text");
 const nextText = document.querySelector("#next-text");
 const wholeChat = document.querySelector("#whole-chat");
-const intro = 'Hey there, we are GoodPivot -4. We help you integrate AI into your business.';
+const intro = 'Hey there, we are GoodPivot. We help you integrate AI into your business.';
 let summary = "";
 let aiResponse = "";
 const greeting = "Hope you're having a great day!";
@@ -577,6 +577,7 @@ function generateImage(prompt) {
     contentType: "application/json",
     data: JSON.stringify({ prompt: prompt }),
     success: function (response) {
+      console.log(response);
       newImage.src = response;
       figCaption.textContent = "AI generated from your answer"
       figure.appendChild(figCaption);
